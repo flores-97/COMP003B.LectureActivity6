@@ -1,4 +1,7 @@
-namespace COMP003B.LectureActivity6
+namespace COMP003B.LectureActivity6;
+using COMP003B.LectureActivity6.Data;
+using Microsoft.EntityFrameworkCore;
+
 {
     public class Program
     {
@@ -8,6 +11,9 @@ namespace COMP003B.LectureActivity6
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            //set up the database context 
+            builder.Services.AddDbContext<WebDevAcademyContext>(options => options.UseSqlServer("Name=ConnectionString:defaultConnection"));
 
             var app = builder.Build();
 
