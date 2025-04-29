@@ -36,7 +36,9 @@
     <h4>Courses</h4>
     <ul>
         @foreach (Course course in ViewBag.Courses)
-        <li>@course.Title</li>
+        {
+            <li>@course.Title</li>
+        }
     </ul>
 </div>
 <div>
